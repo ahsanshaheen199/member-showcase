@@ -1,5 +1,6 @@
 import { registerBlockType } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
+import { nanoid } from 'nanoid';
 import Edit from './edit';
 import Save from './save';
 
@@ -35,18 +36,18 @@ registerBlockType( 'ahsan03/member-showcase', {
 			default: {
 				icons: [
 					{
-						id: '12346',
+						id: nanoid(),
 						icon: 'dashicons dashicons-facebook-alt',
 						link: '#',
 					},
 					{
-						id: '12347',
+						id: nanoid(),
 						icon: 'dashicons dashicons-twitter',
 						link: '#',
 					},
 					{
-						id: '12348',
-						icon: 'dashicons dashicons-menu',
+						id: nanoid(),
+						icon: 'dashicons dashicons-linkedin',
 						link: '#',
 					},
 				],

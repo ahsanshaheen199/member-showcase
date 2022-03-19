@@ -7,11 +7,11 @@ import {
 	Button,
 	ButtonGroup,
 	CardBody,
-	IconButton,
 	PanelBody,
 	TabPanel,
 	TextControl,
 	ToggleControl,
+	TextareaControl,
 } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
@@ -20,6 +20,7 @@ import '@fonticonpicker/react-fonticonpicker/dist/fonticonpicker.base-theme.reac
 import '@fonticonpicker/react-fonticonpicker/dist/fonticonpicker.material-theme.react.css';
 import '@icon/dashicons/dashicons.css';
 import { dashIcons } from './icons';
+import { nanoid } from 'nanoid';
 
 const Edit = ( { attributes, setAttributes } ) => {
 	const {
@@ -32,11 +33,51 @@ const Edit = ( { attributes, setAttributes } ) => {
 		memberImagePosition,
 		socialIcons,
 	} = attributes;
+
 	const blockProps = useBlockProps( {
 		className: `${
 			useBlockProps().className
 		} member-item text-center image-${ memberImagePosition }`,
 	} );
+
+	const setSocialIconsData = ( iconValue ) => {
+		setAttributes( {
+			socialIcons: {
+				icons: [
+					...socialIcons.icons.map( ( ic ) => {
+						return ic.id === iconValue.id ? iconValue : ic;
+					} ),
+				],
+			},
+		} );
+	};
+
+	const addSocialIcons = () => {
+		setAttributes( {
+			socialIcons: {
+				icons: [
+					...socialIcons.icons,
+					{
+						id: nanoid(),
+						icon: 'dashicons dashicons-facebook-alt',
+						link: '#',
+					},
+				],
+			},
+		} );
+	};
+
+	const removeSocialIcons = ( iconId ) => {
+		setAttributes( {
+			socialIcons: {
+				icons: [
+					...socialIcons.icons.filter( ( ic ) => {
+						return ic.id !== iconId;
+					} ),
+				],
+			},
+		} );
+	};
 
 	return (
 		<div { ...blockProps }>
@@ -47,28 +88,22 @@ const Edit = ( { attributes, setAttributes } ) => {
 			) }
 
 			<div className="member-details">
-				<h4>
-					<a href="teacher-single.html">{ memberName }</a>
-				</h4>
+				<h4>{ memberName }</h4>
 				<h6>{ designation }</h6>
 				{ description && <p>{ description }</p> }
-				<ul>
-					<li>
-						<a href="#">
-							<i className="icofont-facebook"></i>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<i className="icofont-twitter"></i>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<i className="icofont-linkedin"></i>
-						</a>
-					</li>
-				</ul>
+				{ socialIcons.icons.length > 0 && (
+					<ul>
+						{ socialIcons.icons.map( ( ic ) => {
+							return (
+								<li key={ ic.id }>
+									<a href={ ic.link }>
+										<i className={ ic.icon }></i>
+									</a>
+								</li>
+							);
+						} ) }
+					</ul>
+				) }
 			</div>
 			<>
 				<InspectorControls>
@@ -136,7 +171,7 @@ const Edit = ( { attributes, setAttributes } ) => {
 												) }
 											</h2>
 											<ButtonGroup>
-												<IconButton
+												<Button
 													isPressed={
 														memberImagePosition ===
 														'left'
@@ -149,7 +184,7 @@ const Edit = ( { attributes, setAttributes } ) => {
 														} )
 													}
 												/>
-												<IconButton
+												<Button
 													isPressed={
 														memberImagePosition ===
 														'top'
@@ -162,7 +197,7 @@ const Edit = ( { attributes, setAttributes } ) => {
 														} )
 													}
 												/>
-												<IconButton
+												<Button
 													isPressed={
 														memberImagePosition ===
 														'right'
@@ -234,7 +269,7 @@ const Edit = ( { attributes, setAttributes } ) => {
 												} }
 											/>
 											{ ! hideDescription && (
-												<TextControl
+												<TextareaControl
 													label={ __(
 														'Description',
 														'msb'
@@ -261,44 +296,92 @@ const Edit = ( { attributes, setAttributes } ) => {
 										>
 											<CardBody>
 												{ socialIcons.icons.map(
-													( ic ) => {
-														const fontPickerProps = {
-															dashIcons,
-															theme: 'bluegrey',
-															renderUsing:
-																'class',
-															value: ic.icon,
-															onChange: () => {},
-															isMulti: false,
-														};
+													( ic, index ) => {
 														return (
 															<PanelBody
 																key={ ic.id }
-																title={ __(
-																	'Icon',
-																	'msb'
-																) }
+																title={ `Icon ${
+																	index + 1
+																}` }
 																initialOpen={
 																	false
 																}
 															>
 																<FontIconPicker
-																	{ ...fontPickerProps }
+																	icons={
+																		dashIcons
+																	}
+																	theme="bluegrey"
+																	renderUsing="class"
+																	value={
+																		ic.icon
+																	}
+																	onChange={ (
+																		value
+																	) => {
+																		setSocialIconsData(
+																			{
+																				...ic,
+																				icon: value,
+																			}
+																		);
+																	} }
+																	isMulti={
+																		false
+																	}
 																/>
 																<TextControl
+																	type="url"
 																	label={ __(
 																		'Link',
 																		'msb'
 																	) }
+																	onChange={ (
+																		value
+																	) =>
+																		setSocialIconsData(
+																			{
+																				...ic,
+																				link: value,
+																			}
+																		)
+																	}
 																	value={
 																		ic.link
 																	}
 																/>
+																<Button
+																	isDestructive
+																	variant="secondary"
+																	onClick={ () =>
+																		removeSocialIcons(
+																			ic.id
+																		)
+																	}
+																>
+																	{ __(
+																		'Remove Icon',
+																		'msb'
+																	) }
+																</Button>
 															</PanelBody>
 														);
 													}
 												) }
 											</CardBody>
+											<hr />
+											<div
+												style={ {
+													textAlign: 'center',
+												} }
+											>
+												<Button
+													variant="primary"
+													onClick={ addSocialIcons }
+												>
+													{ __( 'Add Icons', 'msb' ) }
+												</Button>
+											</div>
 										</PanelBody>
 									</>
 								);

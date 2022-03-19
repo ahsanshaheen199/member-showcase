@@ -5,11 +5,15 @@ const Save = ( { attributes } ) => {
 		memberImageURL,
 		memberName,
 		designation,
+		description,
+		hideDescription,
+		memberImagePosition,
+		socialIcons,
 	} = attributes;
 	const blockProps = useBlockProps.save( {
 		className: `${
 			useBlockProps.save().className
-		} member-item text-center`,
+		} member-item text-center image-${ memberImagePosition }`,
 	} );
 	return (
 		<div { ...blockProps }>
@@ -24,27 +28,22 @@ const Save = ( { attributes } ) => {
 			) }
 
 			<div className="member-details">
-				<h4>
-					<a href="teacher-single.html">{ memberName }</a>
-				</h4>
-				<p>{ designation }</p>
-				<ul>
-					<li>
-						<a href="#">
-							<i className="icofont-facebook"></i>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<i className="icofont-twitter"></i>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<i className="icofont-linkedin"></i>
-						</a>
-					</li>
-				</ul>
+				<h4>{ memberName }</h4>
+				<h6>{ designation }</h6>
+				{ ! hideDescription && <p>{ description }</p> }
+				{ socialIcons.icons.length > 0 && (
+					<ul>
+						{ socialIcons.icons.map( ( ic ) => {
+							return (
+								<li key={ ic.id }>
+									<a href={ ic.link }>
+										<i className={ ic.icon }></i>
+									</a>
+								</li>
+							);
+						} ) }
+					</ul>
+				) }
 			</div>
 		</div>
 	);

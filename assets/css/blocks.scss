@@ -12,6 +12,7 @@
 			margin-bottom: 5px;
 			font-size: 22px;
 			line-height: 34px;
+			font-weight: 700;
 
 			a {
 				display: inline-block;
@@ -38,7 +39,7 @@
 			margin-top: 0;
 			font-size: 15px;
 			line-height: 28px;
-			font-weight: 500;
+			font-weight: 400;
 			color: #3c6382;
 		}
 
@@ -51,7 +52,7 @@
 				display: inline-block;
 
 				a {
-					display: block;
+					display: flex;
 					margin: 0 2px;
 					color: #3742fa;
 					border: 1px solid #3742fa;
@@ -60,6 +61,9 @@
 					line-height: 30px;
 					text-align: center;
 					border-radius: 4px;
+					text-decoration: none;
+					justify-content: center;
+					align-items: center;
 
 					&:hover {
 						background-color: #3742fa;
@@ -98,6 +102,14 @@
 			padding-top: 0;
 		}
 	}
+
+	&.text-center {
+
+		.member-img {
+			display: flex;
+			justify-content: center;
+		}
+	}
 }
 
 
@@ -120,4 +132,9 @@
 
 .text-center {
 	text-align: center;
+}
+
+.rfipdropdown {
+	width: 260px !important;
+	left: -60px !important;
 }
