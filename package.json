@@ -1,0 +1,26 @@
+{
+  "name": "member-showcase",
+  "version": "0.1.0",
+  "main": "./assets/js/blocks.js",
+  "author": "ahsan03",
+  "scripts": {
+    "start": "wp-scripts start ./assets/js/blocks.js",
+    "build": "wp-scripts build ./assets/js/blocks.js",
+    "format:css": "wp-scripts lint-style --fix ./assets/css/blocks.scss"
+  },
+  "devDependencies": {
+    "@fonticonpicker/react-fonticonpicker": "^1.2.0",
+    "@icon/dashicons": "^0.9.0-alpha.4",
+    "@wordpress/block-editor": "^8.3.1",
+    "@wordpress/blocks": "^11.3.1",
+    "@wordpress/components": "^19.6.1",
+    "@wordpress/element": "^4.2.1",
+    "@wordpress/i18n": "^4.4.1",
+    "@wordpress/scripts": "^22.2.1",
+    "classnames": "^2.3.1",
+    "jquery": "^3.6.0",
+    "prop-types": "^15.8.1",
+    "react-transition-group": "^4.4.2",
+    "stylelint-config-prettier": "^9.0.3"
+  }
+}

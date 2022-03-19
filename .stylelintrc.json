@@ -1,0 +1,9 @@
+{
+    "extends": [
+        "@wordpress/stylelint-config/scss",
+        "stylelint-config-prettier"
+    ],
+    "rules": {
+		"no-descending-specificity": null
+	}
+}
