@@ -43,10 +43,14 @@ final class Member_Showcase_Block {
      * Construtor
      */
     public function __construct() {
-        add_action('enqueue_block_editor_assets', array($this, 'block_editor_scripts'));
-        add_action('enqueue_block_assets', array($this, 'block_styles'));
+//        add_action('enqueue_block_editor_assets', array($this, 'block_editor_scripts'));
+//        add_action('enqueue_block_assets', array($this, 'block_styles'));
+	    add_action('init', array($this,'register_block_types_init'));
     }
 
+	public function register_block_types_init() {
+		register_block_type( __DIR__ . '/build/member' );
+	}
     /**
      * Scripts for Block Editor
      *

@@ -15,6 +15,7 @@ import {
 } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
+import './editor.scss';
 import FontIconPicker from '@fonticonpicker/react-fonticonpicker';
 import '@fonticonpicker/react-fonticonpicker/dist/fonticonpicker.base-theme.react.css';
 import '@fonticonpicker/react-fonticonpicker/dist/fonticonpicker.material-theme.react.css';
@@ -288,7 +289,7 @@ const Edit = ( { attributes, setAttributes } ) => {
 													( ic, index ) => {
 														return (
 															<PanelBody
-																key={ ic.id }
+																key={ nanoid() }
 																title={ `Icon ${
 																	index + 1
 																}` }

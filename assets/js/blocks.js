@@ -1,2 +1,2 @@
-import '../css/blocks.scss';
+import '../scss/blocks.scss';
 import './member';

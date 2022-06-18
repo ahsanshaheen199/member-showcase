@@ -1,0 +1,58 @@
+{
+  "apiVersion": 2,
+  "name": "ahsan03/member-showcase",
+  "version": "0.0.1",
+  "title": "Member Showcase",
+  "category": "design",
+  "description": "Member Showcase Block",
+  "textdomain": "msb",
+  "attributes": {
+    "memberImagePosition": {
+      "type": "string",
+      "default": "top"
+    },
+    "memberImageId": {
+      "type": "number"
+    },
+    "memberImageURL": {
+      "type": "string"
+    },
+    "memberName": {
+      "type": "string",
+      "default": "Adam Smith"
+    },
+    "designation": {
+      "type": "string",
+      "default": "CEO at automattic"
+    },
+    "hideDescription": {
+      "type": "boolean",
+      "default": true
+    },
+    "socialIcons": {
+      "type": "object",
+      "default": {
+        "icons": [
+          {
+            "icon": "dashicons dashicons-facebook-alt",
+            "link": "#"
+          },
+          {
+            "icon": "dashicons dashicons-twitter",
+            "link": "#"
+          },
+          {
+            "icon": "dashicons dashicons-linkedin",
+           "link": "#"
+          }
+        ]
+      }
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./build/index.css",
+  "style": "file:./build/style-index.css"
+}
