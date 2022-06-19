@@ -12,6 +12,7 @@ import {
 	TextControl,
 	ToggleControl,
 	TextareaControl,
+	RangeControl,
 } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
@@ -129,7 +130,10 @@ const Edit = ( { attributes, setAttributes } ) => {
 								return (
 									<>
 										<PanelBody
-											title={ __( 'Member Image' ) }
+											title={ __(
+												'Member Image',
+												'msb'
+											) }
 										>
 											{ memberImageId && (
 												<img
@@ -372,6 +376,24 @@ const Edit = ( { attributes, setAttributes } ) => {
 													{ __( 'Add Icons', 'msb' ) }
 												</Button>
 											</div>
+										</PanelBody>
+									</>
+								);
+							}
+							if ( tab.name === 'tab-style' ) {
+								return (
+									<>
+										<PanelBody
+											title={ __(
+												'Member Image',
+												'msb'
+											) }
+										>
+											<RangeControl
+												label="Columns"
+												min={ 2 }
+												max={ 10 }
+											/>
 										</PanelBody>
 									</>
 								);
