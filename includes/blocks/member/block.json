@@ -6,6 +6,7 @@
   "category": "design",
   "description": "Member Showcase Block",
   "textdomain": "msb",
+  "example": {},
   "attributes": {
     "memberImagePosition": {
       "type": "string",

@@ -427,6 +427,7 @@ const Inspector = ( { attributes, setAttributes } ) => {
 							return (
 								<>
 									<PanelBody
+										initialOpen={ false }
 										title={ __( 'Member Image', 'msb' ) }
 									>
 										<RangeControl
