@@ -50,6 +50,52 @@
     },
     "description": {
       "type": "string"
+    },
+    "imageWidth": {
+      "type": "integer",
+      "default": 150
+    },
+    "imageBorder": {
+      "type": "object",
+      "default": {
+        "color": "#e0e1fb",
+        "width": "3px"
+      }
+    },
+    "nameColor": {
+      "type": "string",
+      "default": "#0c2461"
+    },
+    "nameFontSize": {
+      "type": "string",
+      "default": "22"
+    },
+    "nameFontWeight": {
+      "type": "string",
+      "default": "700"
+    },
+    "nameFontStyle": {
+      "type": "string",
+      "default": "normal"
+    },
+    "nameLetterSpacing": {
+      "type": "string"
+    },
+    "nameTextTransform": {
+      "type": "string"
+    },
+    "nameLineHeight": {
+      "type": "string",
+      "default": "34px"
+    },
+    "nameMargin": {
+      "type": "object",
+      "default": {
+        "top": "0",
+        "left": "0",
+        "right": "0",
+        "bottom": "5px"
+      }
     }
   },
   "editorScript": "file:./index.js",

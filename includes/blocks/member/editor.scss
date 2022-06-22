@@ -7,25 +7,6 @@
   .member-details {
     padding: 24px 0 0;
 
-    h4 {
-      margin: 0;
-      margin-bottom: 5px;
-      font-size: 22px;
-      line-height: 34px;
-      font-weight: 700;
-
-      a {
-        display: inline-block;
-        font-weight: 700;
-        text-decoration: none;
-        color: #0c2461;
-
-        &:hover {
-          color: #3742fa;
-        }
-      }
-    }
-
     h6 {
       font-weight: 600;
       color: #335d7d;
@@ -78,9 +59,7 @@
 
     img {
       border-radius: 50%;
-      max-width: 150px;
       border: 6px solid #fff;
-      box-shadow: 0 0 0 3px #e0e1fb;
       height: auto;
       object-fit: cover;
     }
