@@ -23,9 +23,15 @@ const Edit = ( { attributes, setAttributes } ) => {
 		nameTextTransform,
 		nameLineHeight,
 		nameMargin,
+		jobTitleColor,
+		jobTitleFontSize,
+		jobTitleFontWeight,
+		jobTitleFontStyle,
+		jobTitleLetterSpacing,
+		jobTitleTextTransform,
+		jobTitleLineHeight,
+		jobTitleMargin,
 	} = attributes;
-
-	console.log( nameMargin );
 
 	const blockProps = useBlockProps( {
 		className: `${
@@ -66,7 +72,23 @@ const Edit = ( { attributes, setAttributes } ) => {
 				>
 					{ memberName }
 				</h4>
-				<h6>{ designation }</h6>
+				<h6
+					style={ {
+						color: jobTitleColor,
+						fontSize: jobTitleFontSize,
+						fontWeight: jobTitleFontWeight,
+						fontStyle: jobTitleFontStyle,
+						letterSpacing: jobTitleLetterSpacing,
+						textTransform: jobTitleTextTransform,
+						lineHeight: jobTitleLineHeight,
+						marginTop: jobTitleMargin.top,
+						marginRight: jobTitleMargin.right,
+						marginBottom: jobTitleMargin.bottom,
+						marginLeft: jobTitleMargin.left,
+					} }
+				>
+					{ designation }
+				</h6>
 				{ description && hideDescription && <p>{ description }</p> }
 				{ socialIcons.icons.length > 0 && (
 					<ul>

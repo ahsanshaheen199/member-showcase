@@ -6,7 +6,10 @@
   "category": "design",
   "description": "Member Showcase Block",
   "textdomain": "msb",
-  "example": {},
+  "example": {
+    "attributes": {
+    }
+  },
   "attributes": {
     "memberImagePosition": {
       "type": "string",
@@ -97,6 +100,41 @@
         "right": "0",
         "bottom": "5px"
       }
+    },
+    "jobTitleColor": {
+      "type": "string",
+      "default": "#335d7d"
+    },
+    "jobTitleMargin": {
+      "type": "object",
+      "default": {
+        "top": "0",
+        "left": "0",
+        "right": "0",
+        "bottom": "10px"
+      }
+    },
+    "jobTitleFontSize": {
+      "type": "string",
+      "default": "16"
+    },
+    "jobTitleFontWeight": {
+      "type": "string",
+      "default": "600"
+    },
+    "jobTitleFontStyle": {
+      "type": "string",
+      "default": "normal"
+    },
+    "jobTitleLetterSpacing": {
+      "type": "string"
+    },
+    "jobTitleTextTransform": {
+      "type": "string"
+    },
+    "jobTitleLineHeight": {
+      "type": "string",
+      "default": "26px"
     }
   },
   "editorScript": "file:./index.js",

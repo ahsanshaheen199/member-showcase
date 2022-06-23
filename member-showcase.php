@@ -43,28 +43,15 @@ final class Member_Showcase_Block {
      * Construtor
      */
     public function __construct() {
-//        add_action('enqueue_block_editor_assets', array($this, 'block_editor_scripts'));
-//        add_action('enqueue_block_assets', array($this, 'block_styles'));
 	    add_action('init', array($this,'register_block_types_init'));
     }
 
+	/**
+	 * Register Block
+	 */
 	public function register_block_types_init() {
 		register_block_type( __DIR__ . '/build/member' );
 	}
-    /**
-     * Scripts for Block Editor
-     *
-     * @return void
-     */
-    public function block_editor_scripts() {
-        $dependencies = include plugin_dir_path( __FILE__ ) . 'build/blocks.asset.php';
-
-        wp_enqueue_script('member-showcase-block', plugin_dir_url(__FILE__) . 'build/blocks.js', $dependencies['dependencies'], $dependencies['version'], true);
-    }
-
-    public function block_styles() {
-        wp_enqueue_style('member-showcase-block', plugin_dir_url(__FILE__) . 'build/blocks.css');
-    }
 }
 
 

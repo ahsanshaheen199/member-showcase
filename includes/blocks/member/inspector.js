@@ -48,6 +48,14 @@ const Inspector = ( { attributes, setAttributes } ) => {
 		nameTextTransform,
 		nameLineHeight,
 		nameMargin,
+		jobTitleColor,
+		jobTitleFontSize,
+		jobTitleFontWeight,
+		jobTitleFontStyle,
+		jobTitleLetterSpacing,
+		jobTitleTextTransform,
+		jobTitleLineHeight,
+		jobTitleMargin,
 	} = attributes;
 
 	const FONT_WEIGHTS = [
@@ -428,7 +436,7 @@ const Inspector = ( { attributes, setAttributes } ) => {
 								<>
 									<PanelBody
 										initialOpen={ false }
-										title={ __( 'Member Image', 'msb' ) }
+										title={ __( 'Image', 'msb' ) }
 									>
 										<RangeControl
 											label={ __( 'Image Width', 'msb' ) }
@@ -454,7 +462,7 @@ const Inspector = ( { attributes, setAttributes } ) => {
 									</PanelBody>
 
 									<PanelBody
-										title={ __( 'Member Name', 'msb' ) }
+										title={ __( 'Name', 'msb' ) }
 										initialOpen={ false }
 									>
 										<div>
@@ -564,6 +572,128 @@ const Inspector = ( { attributes, setAttributes } ) => {
 												onChange={ ( newValue ) => {
 													setAttributes( {
 														nameMargin: newValue,
+													} );
+												} }
+											/>
+										</div>
+									</PanelBody>
+
+									<PanelBody
+										title={ __( 'Job Title', 'msb' ) }
+										initialOpen={ false }
+									>
+										<div>
+											<h4>{ __( 'Color', 'msb' ) }</h4>
+											<ColorPalette
+												value={ jobTitleColor }
+												onChange={ ( newValue ) =>
+													setAttributes( {
+														jobTitleColor: newValue,
+													} )
+												}
+											/>
+										</div>
+
+										<hr />
+
+										<div>
+											<h4>
+												{ __( 'Typography', 'msb' ) }
+											</h4>
+											<FontSizePicker
+												fontSizes={ FONT_SIZES }
+												value={ jobTitleFontSize }
+												onChange={ ( newValue ) => {
+													setAttributes( {
+														jobTitleFontSize:
+															newValue,
+													} );
+												} }
+											/>
+											<SelectControl
+												label={ __(
+													'Font Weight',
+													'msb'
+												) }
+												value={ jobTitleFontWeight }
+												onChange={ ( newValue ) => {
+													setAttributes( {
+														jobTitleFontWeight:
+															newValue,
+													} );
+												} }
+												options={ FONT_WEIGHTS }
+											/>
+											<SelectControl
+												label={ __(
+													'Font Style',
+													'msb'
+												) }
+												value={ jobTitleFontStyle }
+												onChange={ ( newValue ) => {
+													setAttributes( {
+														jobTitleFontStyle:
+															newValue,
+													} );
+												} }
+												options={ FONT_STYLES }
+											/>
+											<Grid
+												style={ {
+													marginBottom: '24px',
+												} }
+												column={ 2 }
+											>
+												<UnitControl
+													label={ __(
+														'Letter spacing',
+														'msb'
+													) }
+													value={
+														jobTitleLetterSpacing
+													}
+													onChange={ ( newValue ) => {
+														setAttributes( {
+															jobTitleLetterSpacing:
+																newValue,
+														} );
+													} }
+												/>
+												<UnitControl
+													label={ __(
+														'Line Height',
+														'msb'
+													) }
+													value={ jobTitleLineHeight }
+													onChange={ ( newValue ) => {
+														setAttributes( {
+															jobTitleLineHeight:
+																newValue,
+														} );
+													} }
+												/>
+											</Grid>
+											<TextTransformControl
+												value={ jobTitleTextTransform }
+												onChange={ ( newValue ) => {
+													setAttributes( {
+														jobTitleTextTransform:
+															newValue,
+													} );
+												} }
+											/>
+										</div>
+
+										<hr />
+
+										<div>
+											<BoxControl
+												label={ __( 'Margin', 'msb' ) }
+												values={ jobTitleMargin }
+												onChange={ ( newValue ) => {
+													setAttributes( {
+														jobTitleMargin:
+															newValue,
 													} );
 												} }
 											/>
