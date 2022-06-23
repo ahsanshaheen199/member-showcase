@@ -31,6 +31,14 @@ const Edit = ( { attributes, setAttributes } ) => {
 		jobTitleTextTransform,
 		jobTitleLineHeight,
 		jobTitleMargin,
+		descriptionColor,
+		descriptionFontSize,
+		descriptionFontWeight,
+		descriptionFontStyle,
+		descriptionLetterSpacing,
+		descriptionTextTransform,
+		descriptionLineHeight,
+		descriptionMargin,
 	} = attributes;
 
 	const blockProps = useBlockProps( {
@@ -89,7 +97,25 @@ const Edit = ( { attributes, setAttributes } ) => {
 				>
 					{ designation }
 				</h6>
-				{ description && hideDescription && <p>{ description }</p> }
+				{ description && ! hideDescription && (
+					<p
+						style={ {
+							color: descriptionColor,
+							fontSize: descriptionFontSize,
+							fontWeight: descriptionFontWeight,
+							fontStyle: descriptionFontStyle,
+							letterSpacing: descriptionLetterSpacing,
+							textTransform: descriptionTextTransform,
+							lineHeight: descriptionLineHeight,
+							marginTop: descriptionMargin.top,
+							marginRight: descriptionMargin.right,
+							marginBottom: descriptionMargin.bottom,
+							marginLeft: descriptionMargin.left,
+						} }
+					>
+						{ description }
+					</p>
+				) }
 				{ socialIcons.icons.length > 0 && (
 					<ul>
 						{ socialIcons.icons.map( ( ic ) => {

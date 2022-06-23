@@ -54,7 +54,11 @@ final class Member_Showcase_Block {
 	}
 }
 
-
+/**
+ * Returns the main instance of Member_Showcase_Block.
+ *
+ * @return Member_Showcase_Block
+ */
 function member_showcase_block() {
     return Member_Showcase_Block::instance();
 }

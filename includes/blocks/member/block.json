@@ -105,15 +105,6 @@
       "type": "string",
       "default": "#335d7d"
     },
-    "jobTitleMargin": {
-      "type": "object",
-      "default": {
-        "top": "0",
-        "left": "0",
-        "right": "0",
-        "bottom": "10px"
-      }
-    },
     "jobTitleFontSize": {
       "type": "string",
       "default": "16"
@@ -135,6 +126,50 @@
     "jobTitleLineHeight": {
       "type": "string",
       "default": "26px"
+    },
+    "jobTitleMargin": {
+      "type": "object",
+      "default": {
+        "top": "0",
+        "left": "0",
+        "right": "0",
+        "bottom": "10px"
+      }
+    },
+    "descriptionColor": {
+      "type": "string",
+      "default": "#3c6382"
+    },
+    "descriptionFontSize": {
+      "type": "string",
+      "default": "15"
+    },
+    "descriptionFontWeight": {
+      "type": "string",
+      "default": "400"
+    },
+    "descriptionFontStyle": {
+      "type": "string",
+      "default": "normal"
+    },
+    "descriptionLetterSpacing": {
+      "type": "string"
+    },
+    "descriptionTextTransform": {
+      "type": "string"
+    },
+    "descriptionLineHeight": {
+      "type": "string",
+      "default": "28px"
+    },
+    "descriptionMargin": {
+      "type": "object",
+      "default": {
+        "top": "0",
+        "left": "0",
+        "right": "0",
+        "bottom": "0"
+      }
     }
   },
   "editorScript": "file:./index.js",

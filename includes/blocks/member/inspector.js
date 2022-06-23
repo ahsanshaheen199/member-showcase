@@ -1,4 +1,8 @@
-import { InspectorControls, MediaUpload } from '@wordpress/block-editor';
+import {
+	InspectorControls,
+	MediaUpload,
+	__experimentalTextTransformControl as TextTransformControl,
+} from '@wordpress/block-editor';
 import {
 	Button,
 	ButtonGroup,
@@ -24,9 +28,6 @@ import '@fonticonpicker/react-fonticonpicker/dist/fonticonpicker.base-theme.reac
 import '@fonticonpicker/react-fonticonpicker/dist/fonticonpicker.material-theme.react.css';
 import '@icon/dashicons/dashicons.css';
 import { dashIcons } from './icons';
-
-const { __experimentalTextTransformControl: TextTransformControl } =
-	wp.blockEditor;
 
 const Inspector = ( { attributes, setAttributes } ) => {
 	const {
@@ -56,6 +57,14 @@ const Inspector = ( { attributes, setAttributes } ) => {
 		jobTitleTextTransform,
 		jobTitleLineHeight,
 		jobTitleMargin,
+		descriptionColor,
+		descriptionFontSize,
+		descriptionFontWeight,
+		descriptionFontStyle,
+		descriptionLetterSpacing,
+		descriptionTextTransform,
+		descriptionLineHeight,
+		descriptionMargin,
 	} = attributes;
 
 	const FONT_WEIGHTS = [
@@ -292,9 +301,9 @@ const Inspector = ( { attributes, setAttributes } ) => {
 											}
 										/>
 										<TextControl
-											label={ __( 'Designation', 'msb' ) }
+											label={ __( 'Job Title', 'msb' ) }
 											placeholder={ __(
-												'Member Desgination',
+												'Job Title',
 												'msb'
 											) }
 											value={ designation }
@@ -693,6 +702,133 @@ const Inspector = ( { attributes, setAttributes } ) => {
 												onChange={ ( newValue ) => {
 													setAttributes( {
 														jobTitleMargin:
+															newValue,
+													} );
+												} }
+											/>
+										</div>
+									</PanelBody>
+
+									<PanelBody
+										title={ __( 'Description', 'msb' ) }
+										initialOpen={ false }
+									>
+										<div>
+											<h4>{ __( 'Color', 'msb' ) }</h4>
+											<ColorPalette
+												value={ descriptionColor }
+												onChange={ ( newValue ) =>
+													setAttributes( {
+														descriptionColor:
+															newValue,
+													} )
+												}
+											/>
+										</div>
+
+										<hr />
+
+										<div>
+											<h4>
+												{ __( 'Typography', 'msb' ) }
+											</h4>
+											<FontSizePicker
+												fontSizes={ FONT_SIZES }
+												value={ descriptionFontSize }
+												onChange={ ( newValue ) => {
+													setAttributes( {
+														descriptionFontSize:
+															newValue,
+													} );
+												} }
+											/>
+											<SelectControl
+												label={ __(
+													'Font Weight',
+													'msb'
+												) }
+												value={ descriptionFontWeight }
+												onChange={ ( newValue ) => {
+													setAttributes( {
+														descriptionFontWeight:
+															newValue,
+													} );
+												} }
+												options={ FONT_WEIGHTS }
+											/>
+											<SelectControl
+												label={ __(
+													'Font Style',
+													'msb'
+												) }
+												value={ descriptionFontStyle }
+												onChange={ ( newValue ) => {
+													setAttributes( {
+														descriptionFontStyle:
+															newValue,
+													} );
+												} }
+												options={ FONT_STYLES }
+											/>
+											<Grid
+												style={ {
+													marginBottom: '24px',
+												} }
+												column={ 2 }
+											>
+												<UnitControl
+													label={ __(
+														'Letter spacing',
+														'msb'
+													) }
+													value={
+														descriptionLetterSpacing
+													}
+													onChange={ ( newValue ) => {
+														setAttributes( {
+															descriptionLetterSpacing:
+																newValue,
+														} );
+													} }
+												/>
+												<UnitControl
+													label={ __(
+														'Line Height',
+														'msb'
+													) }
+													value={
+														descriptionLineHeight
+													}
+													onChange={ ( newValue ) => {
+														setAttributes( {
+															descriptionLineHeight:
+																newValue,
+														} );
+													} }
+												/>
+											</Grid>
+											<TextTransformControl
+												value={
+													descriptionTextTransform
+												}
+												onChange={ ( newValue ) => {
+													setAttributes( {
+														descriptionTextTransform:
+															newValue,
+													} );
+												} }
+											/>
+										</div>
+
+										<hr />
+
+										<div>
+											<BoxControl
+												label={ __( 'Margin', 'msb' ) }
+												values={ descriptionMargin }
+												onChange={ ( newValue ) => {
+													setAttributes( {
+														descriptionMargin:
 															newValue,
 													} );
 												} }
