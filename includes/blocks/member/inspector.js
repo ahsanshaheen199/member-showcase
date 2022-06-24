@@ -2,6 +2,7 @@ import {
 	InspectorControls,
 	MediaUpload,
 	__experimentalTextTransformControl as TextTransformControl,
+	__experimentalBorderRadiusControl as BorderRadiusControl,
 } from '@wordpress/block-editor';
 import {
 	Button,
@@ -65,6 +66,9 @@ const Inspector = ( { attributes, setAttributes } ) => {
 		descriptionTextTransform,
 		descriptionLineHeight,
 		descriptionMargin,
+		globalBackgroundColor,
+		globalPadding,
+		globalMargin,
 	} = attributes;
 
 	const FONT_WEIGHTS = [
@@ -443,6 +447,55 @@ const Inspector = ( { attributes, setAttributes } ) => {
 						if ( tab.name === 'tab-style' ) {
 							return (
 								<>
+									<PanelBody
+										initialOpen={ false }
+										title={ __( 'Global', 'msb' ) }
+									>
+										<div>
+											<h4>{ __( 'Color', 'msb' ) }</h4>
+											<ColorPalette
+												value={ globalBackgroundColor }
+												onChange={ ( newValue ) =>
+													setAttributes( {
+														globalBackgroundColor:
+															newValue,
+													} )
+												}
+											/>
+										</div>
+
+										<hr />
+
+										<div>
+											<BoxControl
+												label={ __( 'Padding', 'msb' ) }
+												values={ globalPadding }
+												onChange={ ( newValue ) => {
+													setAttributes( {
+														globalPadding: newValue,
+													} );
+												} }
+											/>
+										</div>
+
+										<hr />
+
+										<div>
+											<BoxControl
+												label={ __( 'Margin', 'msb' ) }
+												values={ globalMargin }
+												onChange={ ( newValue ) => {
+													setAttributes( {
+														globalMargin: newValue,
+													} );
+												} }
+											/>
+										</div>
+										<div>
+											<BorderRadiusControl />
+										</div>
+									</PanelBody>
+
 									<PanelBody
 										initialOpen={ false }
 										title={ __( 'Image', 'msb' ) }

@@ -11,6 +11,15 @@
     }
   },
   "attributes": {
+    "globalBackgroundColor": {
+      "type": "string"
+    },
+    "globalPadding": {
+      "type": "object"
+    },
+    "globalMargin": {
+      "type": "object"
+    },
     "memberImagePosition": {
       "type": "string",
       "default": "top"

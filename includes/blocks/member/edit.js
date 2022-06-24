@@ -39,6 +39,9 @@ const Edit = ( { attributes, setAttributes } ) => {
 		descriptionTextTransform,
 		descriptionLineHeight,
 		descriptionMargin,
+		globalBackgroundColor,
+		globalPadding,
+		globalMargin,
 	} = attributes;
 
 	const blockProps = useBlockProps( {
@@ -48,7 +51,20 @@ const Edit = ( { attributes, setAttributes } ) => {
 	} );
 
 	return (
-		<div { ...blockProps }>
+		<div
+			{ ...blockProps }
+			style={ {
+				backgroundColor: globalBackgroundColor,
+				paddingTop: globalPadding?.top ?? false,
+				paddingBottom: globalPadding?.bottom ?? false,
+				paddingLeft: globalPadding?.left ?? false,
+				paddingRight: globalPadding?.right ?? false,
+				marginTop: globalMargin?.top ?? false,
+				marginBottom: globalMargin?.bottom ?? false,
+				marginLeft: globalMargin?.left ?? false,
+				marginRight: globalMargin?.right ?? false,
+			} }
+		>
 			{ memberImageId && (
 				<div className="member-img">
 					<img
