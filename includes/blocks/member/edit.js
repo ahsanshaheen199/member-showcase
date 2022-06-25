@@ -42,6 +42,13 @@ const Edit = ( { attributes, setAttributes } ) => {
 		globalBackgroundColor,
 		globalPadding,
 		globalMargin,
+		globalBorder,
+		globalBorderRadius,
+		socialIconsColor,
+		socialIconsBackgroundColor,
+		socialIconsHoverColor,
+		socialIconsHoverbackgroundColor,
+		socialIconsBorder,
 	} = attributes;
 
 	const blockProps = useBlockProps( {
@@ -63,6 +70,10 @@ const Edit = ( { attributes, setAttributes } ) => {
 				marginBottom: globalMargin?.bottom ?? false,
 				marginLeft: globalMargin?.left ?? false,
 				marginRight: globalMargin?.right ?? false,
+				borderWidth: globalBorder?.width ?? false,
+				borderStyle: globalBorder?.style ?? false,
+				borderColor: globalBorder?.color ?? false,
+				borderRadius: globalBorderRadius,
 			} }
 		>
 			{ memberImageId && (
@@ -137,7 +148,27 @@ const Edit = ( { attributes, setAttributes } ) => {
 						{ socialIcons.icons.map( ( ic ) => {
 							return (
 								<li key={ ic.id }>
-									<a href={ ic.link }>
+									<a
+										style={ {
+											color: socialIconsColor,
+											backgroundColor:
+												socialIconsBackgroundColor,
+											'--msb-social-icons-hover-color':
+												socialIconsHoverColor,
+											'--msb-social-icons-hover-bg-color':
+												socialIconsHoverbackgroundColor,
+											borderWidth:
+												socialIconsBorder?.width ??
+												false,
+											borderStyle:
+												socialIconsBorder?.style ??
+												false,
+											borderColor:
+												socialIconsBorder?.color ??
+												false,
+										} }
+										href={ ic.link }
+									>
 										<i className={ ic.icon }></i>
 									</a>
 								</li>

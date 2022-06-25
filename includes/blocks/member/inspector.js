@@ -2,7 +2,6 @@ import {
 	InspectorControls,
 	MediaUpload,
 	__experimentalTextTransformControl as TextTransformControl,
-	__experimentalBorderRadiusControl as BorderRadiusControl,
 } from '@wordpress/block-editor';
 import {
 	Button,
@@ -69,6 +68,13 @@ const Inspector = ( { attributes, setAttributes } ) => {
 		globalBackgroundColor,
 		globalPadding,
 		globalMargin,
+		globalBorder,
+		globalBorderRadius,
+		socialIconsColor,
+		socialIconsBackgroundColor,
+		socialIconsHoverColor,
+		socialIconsHoverbackgroundColor,
+		socialIconsBorder,
 	} = attributes;
 
 	const FONT_WEIGHTS = [
@@ -452,7 +458,12 @@ const Inspector = ( { attributes, setAttributes } ) => {
 										title={ __( 'Global', 'msb' ) }
 									>
 										<div>
-											<h4>{ __( 'Color', 'msb' ) }</h4>
+											<h4>
+												{ __(
+													'Background Color',
+													'msb'
+												) }
+											</h4>
 											<ColorPalette
 												value={ globalBackgroundColor }
 												onChange={ ( newValue ) =>
@@ -491,8 +502,38 @@ const Inspector = ( { attributes, setAttributes } ) => {
 												} }
 											/>
 										</div>
+
+										<hr />
+
+										<BorderControl
+											label={ __( 'Border', 'msb' ) }
+											value={ globalBorder }
+											enableStyle={ true }
+											onChange={ ( newValue ) =>
+												setAttributes( {
+													globalBorder: newValue,
+												} )
+											}
+										/>
+
+										<hr />
+
 										<div>
-											<BorderRadiusControl />
+											<RangeControl
+												label={ __(
+													'Border Radius',
+													'msb'
+												) }
+												value={ globalBorderRadius }
+												onChange={ ( newValue ) =>
+													setAttributes( {
+														globalBorderRadius:
+															newValue,
+													} )
+												}
+												min={ 1 }
+												max={ 200 }
+											/>
 										</div>
 									</PanelBody>
 
@@ -885,6 +926,88 @@ const Inspector = ( { attributes, setAttributes } ) => {
 															newValue,
 													} );
 												} }
+											/>
+										</div>
+									</PanelBody>
+									<PanelBody
+										title={ __( 'Social Icons', 'msb' ) }
+										initialOpen={ false }
+									>
+										<div>
+											<h4>{ __( 'Color', 'msb' ) }</h4>
+											<ColorPalette
+												value={ socialIconsColor }
+												onChange={ ( newValue ) =>
+													setAttributes( {
+														socialIconsColor:
+															newValue,
+													} )
+												}
+											/>
+										</div>
+										<div>
+											<h4>
+												{ __(
+													'Background Color',
+													'msb'
+												) }
+											</h4>
+											<ColorPalette
+												value={
+													socialIconsBackgroundColor
+												}
+												onChange={ ( newValue ) =>
+													setAttributes( {
+														socialIconsBackgroundColor:
+															newValue,
+													} )
+												}
+											/>
+										</div>
+										<div>
+											<h4>
+												{ __( 'Hover Color', 'msb' ) }
+											</h4>
+											<ColorPalette
+												value={ socialIconsHoverColor }
+												onChange={ ( newValue ) =>
+													setAttributes( {
+														socialIconsHoverColor:
+															newValue,
+													} )
+												}
+											/>
+										</div>
+										<div>
+											<h4>
+												{ __(
+													'Hover Background Color',
+													'msb'
+												) }
+											</h4>
+											<ColorPalette
+												value={
+													socialIconsHoverbackgroundColor
+												}
+												onChange={ ( newValue ) =>
+													setAttributes( {
+														socialIconsHoverbackgroundColor:
+															newValue,
+													} )
+												}
+											/>
+											<hr />
+
+											<BorderControl
+												label={ __( 'Border', 'msb' ) }
+												value={ socialIconsBorder }
+												enableStyle={ true }
+												onChange={ ( newValue ) =>
+													setAttributes( {
+														socialIconsBorder:
+															newValue,
+													} )
+												}
 											/>
 										</div>
 									</PanelBody>

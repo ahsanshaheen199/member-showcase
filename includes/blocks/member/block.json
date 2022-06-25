@@ -20,6 +20,13 @@
     "globalMargin": {
       "type": "object"
     },
+    "globalBorder": {
+      "type": "object"
+    },
+    "globalBorderRadius": {
+      "type": "integer",
+      "default": 10
+    },
     "memberImagePosition": {
       "type": "string",
       "default": "top"
@@ -179,8 +186,31 @@
         "right": "0",
         "bottom": "0"
       }
+    },
+    "socialIconsColor": {
+      "type": "string",
+      "default": "#3742fa"
+    },
+    "socialIconsBackgroundColor": {
+      "type": "string"
+    },
+    "socialIconsHoverColor": {
+      "type": "string",
+      "default": "#fff"
+    },
+    "socialIconsHoverbackgroundColor": {
+      "type": "string",
+      "default": "#3742fa"
+    },
+    "socialIconsBorder": {
+    "type": "object",
+    "default": {
+      "color": "#3742fa",
+      "style": "solid",
+      "width": "1px"
     }
-  },
+  }
+},
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css"
