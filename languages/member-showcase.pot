@@ -1,0 +1,327 @@
+# Copyright (C) 2022 Ahsan Habib Shaheen
+# This file is distributed under the same license as the Member Showcase Block plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Member Showcase Block 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/member-showcase\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2022-06-25T17:57:50+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.6.0\n"
+"X-Domain: msb\n"
+
+#. Plugin Name of the plugin
+msgid "Member Showcase Block"
+msgstr ""
+
+#. Description of the plugin
+msgid "This is a member showcase block plugin."
+msgstr ""
+
+#. Author of the plugin
+msgid "Ahsan Habib Shaheen"
+msgstr ""
+
+#: build/member/index.js:416
+#: includes/blocks/member/inspector.js:132
+#: build/member/index.js:688
+msgid "Small"
+msgstr ""
+
+#: build/member/index.js:420
+#: includes/blocks/member/inspector.js:137
+#: build/member/index.js:693
+msgid "Base"
+msgstr ""
+
+#: build/member/index.js:424
+#: includes/blocks/member/inspector.js:142
+#: build/member/index.js:698
+msgid "Large"
+msgstr ""
+
+#: build/member/index.js:428
+#: includes/blocks/member/inspector.js:147
+#: build/member/index.js:703
+msgid "Extra Large"
+msgstr ""
+
+#: build/member/index.js:470
+#: includes/blocks/member/inspector.js:201
+#: build/member/index.js:757
+msgid "Content"
+msgstr ""
+
+#: build/member/index.js:474
+#: includes/blocks/member/inspector.js:206
+#: build/member/index.js:762
+msgid "Style"
+msgstr ""
+
+#: build/member/index.js:480
+#: includes/blocks/member/inspector.js:216
+#: build/member/index.js:772
+msgid "Member Image"
+msgstr ""
+
+#: build/member/index.js:499
+#: includes/blocks/member/inspector.js:239
+#: build/member/index.js:795
+msgid "Remove Member Image"
+msgstr ""
+
+#: build/member/index.js:499
+#: includes/blocks/member/inspector.js:243
+#: build/member/index.js:799
+msgid "Upload Member Image"
+msgstr ""
+
+#: build/member/index.js:501
+#: includes/blocks/member/inspector.js:252
+#: build/member/index.js:808
+msgid "Image Position"
+msgstr ""
+
+#: build/member/index.js:523
+#: build/member/index.js:651
+#: includes/blocks/member/inspector.js:301
+#: includes/blocks/member/inspector.js:568
+#: build/member/index.js:857
+#: build/member/index.js:1124
+msgid "Name"
+msgstr ""
+
+#: build/member/index.js:524
+#: includes/blocks/member/inspector.js:302
+#: build/member/index.js:858
+msgid "Member Name"
+msgstr ""
+
+#: build/member/index.js:530
+#: build/member/index.js:531
+#: build/member/index.js:721
+#: includes/blocks/member/inspector.js:314
+#: includes/blocks/member/inspector.js:315
+#: includes/blocks/member/inspector.js:685
+#: build/member/index.js:870
+#: build/member/index.js:871
+#: build/member/index.js:1241
+msgid "Job Title"
+msgstr ""
+
+#: build/member/index.js:537
+#: includes/blocks/member/inspector.js:327
+#: build/member/index.js:883
+msgid "Hide Description"
+msgstr ""
+
+#: build/member/index.js:545
+#: build/member/index.js:791
+#: includes/blocks/member/inspector.js:340
+#: includes/blocks/member/inspector.js:807
+#: build/member/index.js:896
+#: build/member/index.js:1363
+msgid "Description"
+msgstr ""
+
+#: build/member/index.js:546
+#: includes/blocks/member/inspector.js:344
+#: build/member/index.js:900
+msgid "Member Description"
+msgstr ""
+
+#: build/member/index.js:552
+#: build/member/index.js:861
+#: includes/blocks/member/inspector.js:358
+#: includes/blocks/member/inspector.js:933
+#: build/member/index.js:914
+#: build/member/index.js:1489
+msgid "Social Icons"
+msgstr ""
+
+#: build/member/index.js:572
+#: includes/blocks/member/inspector.js:399
+#: build/member/index.js:955
+msgid "Link"
+msgstr ""
+
+#: build/member/index.js:581
+#: includes/blocks/member/inspector.js:426
+#: build/member/index.js:982
+msgid "Remove Icon"
+msgstr ""
+
+#: build/member/index.js:589
+#: includes/blocks/member/inspector.js:446
+#: build/member/index.js:1002
+msgid "Add Icons"
+msgstr ""
+
+#: build/member/index.js:595
+#: includes/blocks/member/inspector.js:458
+#: build/member/index.js:1014
+msgid "Global"
+msgstr ""
+
+#: build/member/index.js:596
+#: build/member/index.js:868
+#: includes/blocks/member/inspector.js:462
+#: includes/blocks/member/inspector.js:950
+#: build/member/index.js:1018
+#: build/member/index.js:1506
+msgid "Background Color"
+msgstr ""
+
+#: build/member/index.js:602
+#: includes/blocks/member/inspector.js:482
+#: build/member/index.js:1038
+msgid "Padding"
+msgstr ""
+
+#: build/member/index.js:610
+#: build/member/index.js:713
+#: build/member/index.js:783
+#: build/member/index.js:853
+#: includes/blocks/member/inspector.js:496
+#: includes/blocks/member/inspector.js:673
+#: includes/blocks/member/inspector.js:794
+#: includes/blocks/member/inspector.js:921
+#: build/member/index.js:1052
+#: build/member/index.js:1229
+#: build/member/index.js:1350
+#: build/member/index.js:1477
+msgid "Margin"
+msgstr ""
+
+#: build/member/index.js:618
+#: build/member/index.js:644
+#: build/member/index.js:884
+#: includes/blocks/member/inspector.js:509
+#: includes/blocks/member/inspector.js:556
+#: includes/blocks/member/inspector.js:1002
+#: build/member/index.js:1065
+#: build/member/index.js:1112
+#: build/member/index.js:1558
+msgid "Border"
+msgstr ""
+
+#: build/member/index.js:625
+#: includes/blocks/member/inspector.js:523
+#: build/member/index.js:1079
+msgid "Border Radius"
+msgstr ""
+
+#: build/member/index.js:634
+#: includes/blocks/member/inspector.js:542
+#: build/member/index.js:1098
+msgid "Image"
+msgstr ""
+
+#: build/member/index.js:636
+#: includes/blocks/member/inspector.js:545
+#: build/member/index.js:1101
+msgid "Image Width"
+msgstr ""
+
+#: build/member/index.js:653
+#: build/member/index.js:723
+#: build/member/index.js:793
+#: build/member/index.js:863
+#: includes/blocks/member/inspector.js:572
+#: includes/blocks/member/inspector.js:689
+#: includes/blocks/member/inspector.js:811
+#: includes/blocks/member/inspector.js:937
+#: build/member/index.js:1128
+#: build/member/index.js:1245
+#: build/member/index.js:1367
+#: build/member/index.js:1493
+msgid "Color"
+msgstr ""
+
+#: build/member/index.js:658
+#: build/member/index.js:728
+#: build/member/index.js:798
+#: includes/blocks/member/inspector.js:587
+#: includes/blocks/member/inspector.js:704
+#: includes/blocks/member/inspector.js:827
+#: build/member/index.js:1143
+#: build/member/index.js:1260
+#: build/member/index.js:1383
+msgid "Typography"
+msgstr ""
+
+#: build/member/index.js:667
+#: build/member/index.js:737
+#: build/member/index.js:807
+#: includes/blocks/member/inspector.js:599
+#: includes/blocks/member/inspector.js:717
+#: includes/blocks/member/inspector.js:840
+#: build/member/index.js:1155
+#: build/member/index.js:1273
+#: build/member/index.js:1396
+msgid "Font Weight"
+msgstr ""
+
+#: build/member/index.js:676
+#: build/member/index.js:746
+#: build/member/index.js:816
+#: includes/blocks/member/inspector.js:613
+#: includes/blocks/member/inspector.js:731
+#: includes/blocks/member/inspector.js:854
+#: build/member/index.js:1169
+#: build/member/index.js:1287
+#: build/member/index.js:1410
+msgid "Font Style"
+msgstr ""
+
+#: build/member/index.js:690
+#: build/member/index.js:760
+#: build/member/index.js:830
+#: includes/blocks/member/inspector.js:632
+#: includes/blocks/member/inspector.js:751
+#: includes/blocks/member/inspector.js:874
+#: build/member/index.js:1188
+#: build/member/index.js:1307
+#: build/member/index.js:1430
+msgid "Letter spacing"
+msgstr ""
+
+#: build/member/index.js:698
+#: build/member/index.js:768
+#: build/member/index.js:838
+#: includes/blocks/member/inspector.js:645
+#: includes/blocks/member/inspector.js:766
+#: includes/blocks/member/inspector.js:889
+#: build/member/index.js:1201
+#: build/member/index.js:1322
+#: build/member/index.js:1445
+msgid "Line Height"
+msgstr ""
+
+#: build/member/index.js:873
+#: includes/blocks/member/inspector.js:969
+#: build/member/index.js:1525
+msgid "Hover Color"
+msgstr ""
+
+#: build/member/index.js:878
+#: includes/blocks/member/inspector.js:983
+#: build/member/index.js:1539
+msgid "Hover Background Color"
+msgstr ""
+
+#: build/member/block.json
+#: includes/blocks/member/block.json
+msgctxt "block title"
+msgid "Member Showcase"
+msgstr ""
+
+#: build/member/block.json
+#: includes/blocks/member/block.json
+msgctxt "block description"
+msgid "Member Showcase Block"
+msgstr ""

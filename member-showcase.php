@@ -42,7 +42,8 @@ final class Member_Showcase_Block {
      * Construtor
      */
     public function __construct() {
-	    add_action('init', array($this,'register_block_types_init'));
+	    add_action('init', array( $this, 'register_block_types_init' ));
+	    add_action( 'init', array( $this, 'load_textdomain' ));
     }
 
 	/**
@@ -50,6 +51,17 @@ final class Member_Showcase_Block {
 	 */
 	public function register_block_types_init() {
 		register_block_type( __DIR__ . '/build/member' );
+
+		if ( function_exists( 'wp_set_script_translations' ) ) {
+			wp_set_script_translations( 'member-showcase', 'msb', plugin_dir_path( __FILE__ ) . 'languages' );
+		}
+	}
+
+	/**
+	 * Load all translations for our plugin from the MO file.
+	 */
+	public function load_textdomain() {
+		load_plugin_textdomain( 'msb', false, basename( __DIR__ ) . '/languages' );
 	}
 }
 

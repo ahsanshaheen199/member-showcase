@@ -6,8 +6,8 @@
   "scripts": {
     "start": "wp-scripts start --webpack-src-dir=includes/blocks --webpack-copy-php",
     "build": "wp-scripts build --webpack-src-dir=includes/blocks --webpack-copy-php",
-    "format:css": "wp-scripts lint-style --fix ./assets/css/blocks.scss",
-    "packages-update": "wp-scripts packages-update"
+    "packages-update": "wp-scripts packages-update",
+    "plugin-zip": "wp-scripts plugin-zip"
   },
   "devDependencies": {
     "@fonticonpicker/react-fonticonpicker": "^1.2.0",
