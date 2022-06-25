@@ -17,7 +17,6 @@
         a {
           display: flex;
           margin: 0 2px;
-          border: 1px solid #3742fa;
           width: 30px;
           height: 30px;
           line-height: 30px;
@@ -28,7 +27,6 @@
           align-items: center;
 
           &:hover {
-            //background-color: #3742fa;
             background-color: var(--msb-social-icons-hover-bg-color) !important;
             color: var(--msb-social-icons-hover-color) !important;
           }

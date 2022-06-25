@@ -9,18 +9,75 @@ const Save = ( { attributes } ) => {
 		hideDescription,
 		memberImagePosition,
 		socialIcons,
+		imageWidth,
+		imageBorder,
+		nameColor,
+		nameFontSize,
+		nameFontWeight,
+		nameFontStyle,
+		nameLetterSpacing,
+		nameTextTransform,
+		nameLineHeight,
+		nameMargin,
+		jobTitleColor,
+		jobTitleFontSize,
+		jobTitleFontWeight,
+		jobTitleFontStyle,
+		jobTitleLetterSpacing,
+		jobTitleTextTransform,
+		jobTitleLineHeight,
+		jobTitleMargin,
+		descriptionColor,
+		descriptionFontSize,
+		descriptionFontWeight,
+		descriptionFontStyle,
+		descriptionLetterSpacing,
+		descriptionTextTransform,
+		descriptionLineHeight,
+		descriptionMargin,
+		globalBackgroundColor,
+		globalPadding,
+		globalMargin,
+		globalBorder,
+		globalBorderRadius,
+		socialIconsColor,
+		socialIconsBackgroundColor,
+		socialIconsHoverColor,
+		socialIconsHoverbackgroundColor,
+		socialIconsBorder,
 	} = attributes;
+
 	const blockProps = useBlockProps.save( {
 		className: `${
 			useBlockProps.save().className
 		} member-item text-center image-${ memberImagePosition }`,
 	} );
 	return (
-		<div { ...blockProps }>
+		<div
+			{ ...blockProps }
+			style={ {
+				backgroundColor: globalBackgroundColor,
+				paddingTop: globalPadding?.top ?? false,
+				paddingBottom: globalPadding?.bottom ?? false,
+				paddingLeft: globalPadding?.left ?? false,
+				paddingRight: globalPadding?.right ?? false,
+				marginTop: globalMargin?.top ?? false,
+				marginBottom: globalMargin?.bottom ?? false,
+				marginLeft: globalMargin?.left ?? false,
+				marginRight: globalMargin?.right ?? false,
+				borderWidth: globalBorder?.width ?? false,
+				borderStyle: globalBorder?.style ?? false,
+				borderColor: globalBorder?.color ?? false,
+				borderRadius: globalBorderRadius,
+			} }
+		>
 			{ memberImageId && (
 				<div className="member-img">
 					<img
-						className="img-fluid"
+						style={ {
+							maxWidth: `${ imageWidth }px`,
+							boxShadow: `0 0 0 ${ imageBorder.width } ${ imageBorder.color }`,
+						} }
 						src={ memberImageURL }
 						alt={ memberName }
 					/>
@@ -28,15 +85,85 @@ const Save = ( { attributes } ) => {
 			) }
 
 			<div className="member-details">
-				<h4>{ memberName }</h4>
-				<h6>{ designation }</h6>
-				{ ! hideDescription && <p>{ description }</p> }
+				<h4
+					style={ {
+						color: nameColor,
+						fontSize: nameFontSize,
+						fontWeight: nameFontWeight,
+						fontStyle: nameFontStyle,
+						letterSpacing: nameLetterSpacing,
+						textTransform: nameTextTransform,
+						lineHeight: nameLineHeight,
+						marginTop: nameMargin.top,
+						marginRight: nameMargin.right,
+						marginBottom: nameMargin.bottom,
+						marginLeft: nameMargin.left,
+					} }
+				>
+					{ memberName }
+				</h4>
+				<h6
+					style={ {
+						color: jobTitleColor,
+						fontSize: jobTitleFontSize,
+						fontWeight: jobTitleFontWeight,
+						fontStyle: jobTitleFontStyle,
+						letterSpacing: jobTitleLetterSpacing,
+						textTransform: jobTitleTextTransform,
+						lineHeight: jobTitleLineHeight,
+						marginTop: jobTitleMargin.top,
+						marginRight: jobTitleMargin.right,
+						marginBottom: jobTitleMargin.bottom,
+						marginLeft: jobTitleMargin.left,
+					} }
+				>
+					{ designation }
+				</h6>
+				{ description && ! hideDescription && (
+					<p
+						style={ {
+							color: descriptionColor,
+							fontSize: descriptionFontSize,
+							fontWeight: descriptionFontWeight,
+							fontStyle: descriptionFontStyle,
+							letterSpacing: descriptionLetterSpacing,
+							textTransform: descriptionTextTransform,
+							lineHeight: descriptionLineHeight,
+							marginTop: descriptionMargin.top,
+							marginRight: descriptionMargin.right,
+							marginBottom: descriptionMargin.bottom,
+							marginLeft: descriptionMargin.left,
+						} }
+					>
+						{ description }
+					</p>
+				) }
 				{ socialIcons.icons.length > 0 && (
 					<ul>
 						{ socialIcons.icons.map( ( ic ) => {
 							return (
 								<li key={ ic.id }>
-									<a href={ ic.link }>
+									<a
+										style={ {
+											color: socialIconsColor,
+											backgroundColor:
+												socialIconsBackgroundColor,
+											'--msb-social-icons-hover-color':
+												socialIconsHoverColor,
+											'--msb-social-icons-hover-bg-color':
+												socialIconsHoverbackgroundColor,
+											borderWidth:
+												socialIconsBorder?.width ??
+												false,
+											borderStyle:
+												socialIconsBorder?.style ??
+												false,
+											borderColor:
+												socialIconsBorder?.color ??
+												false,
+										} }
+										href={ ic.link }
+									>
 										<i className={ ic.icon }></i>
 									</a>
 								</li>

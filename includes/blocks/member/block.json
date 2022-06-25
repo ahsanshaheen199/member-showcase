@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/block.json",
   "apiVersion": 2,
   "name": "ahsan03/member-showcase",
   "version": "0.0.1",
@@ -88,7 +89,7 @@
     },
     "nameFontSize": {
       "type": "string",
-      "default": "22"
+      "default": "22px"
     },
     "nameFontWeight": {
       "type": "string",
@@ -123,7 +124,7 @@
     },
     "jobTitleFontSize": {
       "type": "string",
-      "default": "16"
+      "default": "16px"
     },
     "jobTitleFontWeight": {
       "type": "string",
@@ -158,7 +159,7 @@
     },
     "descriptionFontSize": {
       "type": "string",
-      "default": "15"
+      "default": "15px"
     },
     "descriptionFontWeight": {
       "type": "string",
