@@ -9,6 +9,7 @@
   "textdomain": "msb",
   "example": {
     "attributes": {
+      "memberImageURL": "https://via.placeholder.com/150"
     }
   },
   "attributes": {
@@ -36,7 +37,8 @@
       "type": "number"
     },
     "memberImageURL": {
-      "type": "string"
+      "type": "string",
+      "default": "https://via.placeholder.com/150"
     },
     "memberName": {
       "type": "string",

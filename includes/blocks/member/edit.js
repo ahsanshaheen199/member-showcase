@@ -76,7 +76,7 @@ const Edit = ( { attributes, setAttributes } ) => {
 				borderRadius: globalBorderRadius,
 			} }
 		>
-			{ memberImageId && (
+			{ ( memberImageId || memberImageURL ) && (
 				<div className="member-img">
 					<img
 						style={ {

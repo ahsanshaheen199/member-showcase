@@ -3,10 +3,9 @@
  * Plugin Name:     Member Showcase Block
  * Description:     This is a member showcase block plugin.
  * Author:          Ahsan Habib Shaheen
- * Author URI:      https://wp-cli.org
  * Text Domain:     msb
  * Domain Path:     /languages
- * Version:         0.1.0
+ * Version:         1.0.0
  *
  * @package         Member_Showcase
  */

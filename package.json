@@ -1,6 +1,6 @@
 {
   "name": "member-showcase",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "./assets/js/blocks.js",
   "author": "ahsan03",
   "scripts": {
@@ -19,11 +19,9 @@
     "@wordpress/i18n": "^4.11.0",
     "@wordpress/scripts": "^23.3.0",
     "classnames": "^2.3.1",
+    "nanoid": "^4.0.0",
     "prop-types": "^15.8.1",
     "react-transition-group": "^4.4.2",
     "stylelint-config-prettier": "^9.0.3"
-  },
-  "dependencies": {
-    "nanoid": "^3.3.1"
   }
 }
