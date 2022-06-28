@@ -1,7 +1,6 @@
 {
   "name": "member-showcase",
   "version": "1.0.0",
-  "main": "./assets/js/blocks.js",
   "author": "ahsan03",
   "scripts": {
     "start": "wp-scripts start --webpack-src-dir=includes/blocks --webpack-copy-php",

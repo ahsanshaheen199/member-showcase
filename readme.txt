@@ -29,6 +29,9 @@ Yes, it will work with any standard WordPress theme.
 
 == Screenshots ==
 
+1. Block List
+2. Grid Layout
+3. Image Left
 
 == Changelog ==
 
