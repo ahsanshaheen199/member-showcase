@@ -4,7 +4,7 @@ Tags: gutenberg, block, blocks, editor, team, member, team member, profile, gute
 Requires at least: 5.6
 Tested up to: 6.0
 Requires PHP: 5.6
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,6 +34,9 @@ Yes, it will work with any standard WordPress theme.
 3. Image Left
 
 == Changelog ==
+
+= 1.1.0 =
+* Added block pattern.
 
 = 1.0.0 =
 * Initial release.

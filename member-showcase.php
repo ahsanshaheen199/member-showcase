@@ -1,11 +1,13 @@
 <?php
 /**
  * Plugin Name:     Member Showcase Block
+ * Plugin URI:      https://wordpress.org/plugins/member-showcase-block/
  * Description:     This is a member showcase block plugin.
  * Author:          Ahsan Habib Shaheen
+ * Author URI:      https://profiles.wordpress.org/ahsan03/
  * Text Domain:     msb
  * Domain Path:     /languages
- * Version:         1.0.0
+ * Version:         1.1.0
  *
  * @package         Member_Showcase
  */
@@ -21,7 +23,7 @@ final class Member_Showcase_Block {
      *
      * @var string
      */
-    private $version = '0.1.0';
+    private $version = '1.1.0';
 
     /**
      * Initialize Member_Showcase_Block class
@@ -42,8 +44,11 @@ final class Member_Showcase_Block {
      * Construtor
      */
     public function __construct() {
-	    add_action('init', array( $this, 'register_block_types_init' ));
-	    add_action( 'init', array( $this, 'load_textdomain' ));
+	    add_action( 'init', array( $this, 'register_block_types_init' ) );
+	    add_action( 'init', array( $this, 'load_textdomain' ) );
+
+	    // block patterns
+	    require plugin_dir_path( __FILE__ ) . 'includes/patterns/block-patterns.php';
     }
 
 	/**
@@ -51,10 +56,6 @@ final class Member_Showcase_Block {
 	 */
 	public function register_block_types_init() {
 		register_block_type( __DIR__ . '/build/member' );
-
-		if ( function_exists( 'wp_set_script_translations' ) ) {
-			wp_set_script_translations( 'member-showcase', 'msb', plugin_dir_path( __FILE__ ) . 'languages' );
-		}
 	}
 
 	/**
@@ -62,6 +63,10 @@ final class Member_Showcase_Block {
 	 */
 	public function load_textdomain() {
 		load_plugin_textdomain( 'msb', false, basename( __DIR__ ) . '/languages' );
+
+		if ( function_exists( 'wp_set_script_translations' ) ) {
+			wp_set_script_translations( 'member-showcase', 'msb', plugin_dir_path( __FILE__ ) . 'languages' );
+		}
 	}
 }
 
