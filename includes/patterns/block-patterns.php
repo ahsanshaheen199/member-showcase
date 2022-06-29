@@ -18,7 +18,7 @@ if ( ! function_exists( 'member_showcase_register_block_patterns' ) ) {
 		// Four Column Block Pattern ( Image Top )
 		register_block_pattern( 'ahsan03/four-column-member-pattern', array(
 			'title'         => __( 'Four Column', 'msb' ),
-			'description'   => __( 'Four Column Member, Image Top' ),
+			'description'   => __( 'Four Column Member, Image Top', 'msb' ),
 			'categories' => array( 'team_member' ),
 			'content'       => '<!-- wp:group -->
 								<div class="wp-block-group"><!-- wp:columns -->
@@ -52,7 +52,7 @@ if ( ! function_exists( 'member_showcase_register_block_patterns' ) ) {
 		// Two Column Block Pattern ( Image Left )
 		register_block_pattern( 'ahsan03/two-column-member-pattern', array(
 			'title'         => __( 'Two Column', 'msb' ),
-			'description'   => __( 'Two Column Member, Image Left' ),
+			'description'   => __( 'Two Column Member, Image Left', 'msb' ),
 			'categories' => array( 'team_member' ),
 			'content'       => '<!-- wp:group -->
 								<div class="wp-block-group"><!-- wp:columns -->
